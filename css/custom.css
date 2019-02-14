@@ -1,0 +1,14 @@
+#QR {
+    padding-top: 20px;
+}
+
+#QR a {
+    border: 0
+}
+
+#QR img {
+    width: 180px;
+    max-width: 100%;
+    display: inline-block;
+    margin: .8em 2em 0 2em
+}

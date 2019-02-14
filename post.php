@@ -1,5 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
+<link href="<?php $this->options->themeUrl('css/custom.css'); ?>" rel="stylesheet" type="text/css"/>
 
 <main>
     <div class="wrap min">
@@ -23,6 +24,22 @@
         </section>
         <article class="post-content">
             <?php $this->content(); ?>
+
+            <div class=“buttons” style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
+                <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                    <span>打赏</span>
+                </button>
+                <div id="QR" style="display: none;">
+                    <div id="wechat" style="display: inline-block">
+                        <a class="fancybox" rel="group"><img id="wechat_qr" src="http://blog.smallraw.com/wx.png" alt="WeChat Pay"></a>
+                        <p>微信打赏</p>
+                    </div>
+                    <div id="alipay" style="display: inline-block">
+                        <a class="fancybox" rel="group"><img id="alipay_qr" src="http://blog.smallraw.com/zfb.png" alt="Alipay"></a>
+                        <p>支付宝打赏</p>
+                    </div>
+                </div>
+            </div>
         </article>
         <ul class="post-near">
             <li>上一篇: <?php $this->thePrev('%s','看完啦 (つд⊂)'); ?></li>
