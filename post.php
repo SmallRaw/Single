@@ -1,6 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-<link href="<?php $this->options->themeUrl('css/custom.css'); ?>" rel="stylesheet" type="text/css"/>
 
 <main>
     <div class="wrap min">
@@ -25,8 +24,8 @@
         <article class="post-content">
             <?php $this->content(); ?>
 
-            <div class=“buttons” style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
-                <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+            <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
+                <button class="btn small" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
                     <span>打赏</span>
                 </button>
                 <div id="QR" style="display: none;">
