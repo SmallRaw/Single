@@ -26,7 +26,10 @@ fieldset, legend, figure{
 
 body{
     color: #353535;
-    font: 16px/1.5 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+    font-size: 16px/1.5;
+     /* font: 16px/1.5 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', sans-serif; */
+     /* font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; */
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 @media screen and (max-width: 500px){
@@ -554,6 +557,10 @@ table > tbody > tr:hover{
 
 table > thead > tr > th, table > tbody > tr > th, table > tfoot > tr > th,
 table > thead > tr > td, table > tbody > tr > td, table > tfoot > tr > td{
+    white-space: pre-wrap;
+}
+
+table td:nth-child(1) {
     white-space: nowrap;
 }
 
