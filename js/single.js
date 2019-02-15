@@ -14,8 +14,9 @@
 var Single_Theme = function (config) {
     var that = this;
     var body = document.body;
+    var page = document.getElementsByClassName("home-title")[0];
     var content = document.getElementsByClassName("post-content")[0] || document.getElementsByClassName("page-content")[0];
-
+    
     // 菜单按钮
     this.header = function () {
         var toggle = document.getElementsByClassName("toggle-btn")[0];
@@ -56,6 +57,64 @@ var Single_Theme = function (config) {
         body.classList.remove("neon");
         document.cookie = "night=false;" + "path=/";
     };
+
+    //分类栏
+    this.category =function(){
+        var wrap = document.getElementsByClassName("wrap")[0];
+        var categoryList = config.categorys.stack;
+        if(categoryList.length > 0){
+            body.classList.add("has-trees");
+            var trees = document.createElement("aside");
+            trees.className = "article-list";
+            trees.innerHTML += "<h3>分类目录：</h3>";
+        
+            for(var i = 0; i < categoryList.length; i++){
+                var category = categoryList[i];
+                
+                if(category.count == 0){
+                    continue;
+                }
+                //<a href="<?php echo $child['permalink'] ?>" title="<?php echo $child['name']; ?>">
+                //○ <?php echo $child['name']; ?>
+                //<span class="badge" style="float:right;"><?php echo $child['count']; ?></span>
+                //</a>
+                
+                var item = document.createElement("a");
+                item.innerText = category.name;
+                item.href = category.permalink;
+                item.title = category.name;
+                item.setAttribute("slug",category.slug); 
+                
+                if(category.directory.length > 1){
+                    item.classList.add("subCategory")
+                    item.innerText = "┣ " + item.innerText
+                }
+
+                var itemSpan = document.createElement("span");
+                itemSpan.classList.add("badge");
+                itemSpan.classList.add("categoryCount");
+                itemSpan.innerText = category.count + " 篇";
+
+                item.appendChild(itemSpan);
+
+                trees.appendChild(item);
+            }
+
+            wrap.appendChild(trees);
+            function toggle_tree() {
+                var buttons = document.getElementsByTagName("footer")[0].getElementsByClassName("buttons")[0];
+                var btn = document.createElement("a");
+                btn.className = "toggle-list";
+                buttons.appendChild(btn);
+
+                btn.addEventListener("click", function () {
+                    trees.classList.toggle("active");
+                })
+            }
+            toggle_tree();
+        }
+
+    }
 
     // 目录树
     this.tree = function () {
@@ -137,6 +196,10 @@ var Single_Theme = function (config) {
         this.links();
     }
 
+    if(page){
+        this.category();
+    }
+    
     // 返回页首
     window.addEventListener("scroll", this.to_top);
 

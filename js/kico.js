@@ -195,6 +195,7 @@ function Kico_Style () {
         request.open(prop.method, prop.url);
         if(prop.crossDomain){ request.setRequestHeader("X-Requested-With", "XMLHttpRequest"); }
 
+        request.setRequestHeader("Access-Control-Allow-Origin","*, *")
         if(prop.header){
             for(var i in prop.header){
                 request.setRequestHeader(prop.header[i][0], prop.header[i][1]);

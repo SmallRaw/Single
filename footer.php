@@ -33,10 +33,15 @@
         </section>
 <?php endif; ?>
         <section class="sub-footer">
-            <p>© <?php echo date('Y'); ?> <a href="<?php $this -> options -> siteUrl() ?>"><?php $this -> options -> title() ?></a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Single" target="_blank" rel="nofollow">Single</a>.</p>
+            <p>© <?php echo date('Y'); ?> <a href="<?php $this -> options -> siteUrl() ?>"><?php $this -> options -> title() ?></a>. All Rights Reserved. Theme By <a href="https://github.com/smallraw/Single" target="_blank" rel="nofollow">Single</a>.</p>
         </section>
     </div>
 </footer>
+
+<script>
+    <?php $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
+    var categoryList = eval(<?php echo json_encode($categorys);?>)
+</script>
 
 <?php if($this -> options -> cdn_set == '0'): ?>
 <script src="<?php $this->options->themeUrl('js/kico.js'); ?>"></script>
@@ -45,7 +50,7 @@
 <script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single/js/kico.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single/js/single.js"></script>
 <?php endif; ?>
-<script>var single = new Single_Theme({copyNotice: <?php if ($this->options->copy_notice == 1): ?>true<?php else: ?>false<?php endif; ?>, toggleNight: <?php if ($this->options->night_mode == 1): ?>true<?php else: ?>false<?php endif; ?>});</script>
+<script>var single = new Single_Theme({copyNotice: <?php if ($this->options->copy_notice == 1): ?>true<?php else: ?>false<?php endif; ?>, toggleNight: <?php if ($this->options->night_mode == 1): ?>true<?php else: ?>false<?php endif; ?>, categorys:categoryList});</script>
 <?php $this -> options -> custom_script() ?>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.min.js"></script>
 <script>var scroll = new SmoothScroll('.to-top, .article-list a', {offset: 100});</script>

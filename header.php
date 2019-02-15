@@ -56,9 +56,9 @@
     </form>
     <ul class="head-menu">
         <li><a href="<?php $this->options->siteUrl(); ?>">首页</a></li>
-        <li class="has-child">
+        <!-- <li class="has-child">
             <a>分类</a>
-            <ul class="sub-menu">
+                <ul class="sub-menu">
                 <?php $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
                 <?php while($categorys->next()): ?>
                     <?php if ($categorys->levels === 0): ?>
@@ -66,33 +66,18 @@
                         <?php if (empty($children)) { ?>
                             <li <?php if($this->is('category', $categorys->slug)): ?> class="active"<?php endif; ?>>
                                 <a href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name(); ?>">
-                                    <?php $categorys->name(); ?>
-                                    <?php var_dump($categorys); ?>
-                                    <span class="badge"><?php $categorys->count(); ?></span>
+                                 ○ <?php $categorys->name(); ?>
                                 </a>
                             </li>
                         <?php } else { ?>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" data-target="#"><?php $categorys->name(); ?> <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                <?php foreach ($children as $mid) { ?>
-                                    <?php $child = $categorys->getCategory($mid); ?>
-                                        <li <?php if($this->is('category', $mid)): ?> class="active"<?php endif; ?>>
-                                            <a href="<?php echo $child['permalink'] ?>" title="<?php echo $child['name']; ?>">
-                                                <?php echo $child['name']; ?>
-                                                <span class="badge" style="float:right;"><?php echo $child['count']; ?></span>
-                                            </a>
-                                        </li>
-                                    <?php } ?>
-                                </ul>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" data-target="#"> ○ <?php $categorys->name(); ?> <b class="caret"></b></a>
                             </li>
                         <?php } ?>
                     <?php endif; ?>
                 <?php endwhile; ?>
             </ul>
-        </li>
+        </li> -->
+        <?php $this->widget('Widget_Contents_Page_List')->parse('<li><a href="{permalink}">{title}</a></li>'); ?>
     </ul>
-   
-    
-
 </header>

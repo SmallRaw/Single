@@ -12,3 +12,11 @@
     display: inline-block;
     margin: .8em 2em 0 2em
 }
+
+.subCategory{
+    margin-left: 12px;
+}
+
+.categoryCount{
+    float:right;
+}
