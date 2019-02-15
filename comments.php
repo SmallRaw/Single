@@ -47,12 +47,12 @@
 <?php else: ?>
             <div class="row">
                 <fieldset class="col-m-6">
-                    <input type="text" name="author" placeholder="昵称 *：" value="<?php $this->remember('author'); ?>" required>
-                    <input type="email" name="mail" placeholder="电邮 *：" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>>
-                    <input type="url" name="url" placeholder="http://" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
+                    <input type="text" name="author" placeholder="昵称（必填）：" value="<?php $this->remember('author'); ?>" required>
+                    <input type="email" name="mail" placeholder="电子邮件（可不填）：" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>>
+                    <input type="url" name="url" style="display:none;" placeholder="http://" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
                 </fieldset>
                 <fieldset class="col-m-6">
-                    <textarea rows="3" name="text" id="textarea" placeholder="快来评论吧 (*≧ω≦)ﾉ" required><?php $this->remember('text'); ?></textarea>
+                    <textarea rows="4" name="text" id="textarea" placeholder="快来评论吧 (*≧ω≦)ﾉ" required><?php $this->remember('text'); ?></textarea>
                     <button type="submit" class="btn small">写好了~</button>
                 </fieldset>
             </div>

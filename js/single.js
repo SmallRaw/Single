@@ -71,10 +71,6 @@ var Single_Theme = function (config) {
             for(var i = 0; i < categoryList.length; i++){
                 var category = categoryList[i];
                 
-                if(category.count == 0){
-                    continue;
-                }
-                
                 var item = document.createElement("a");
                 item.innerText = category.name;
                 item.href = category.permalink;
@@ -83,7 +79,7 @@ var Single_Theme = function (config) {
                 
                 if(category.directory.length > 1){
                     item.classList.add("subCategory")
-                    item.innerText = "┣ " + item.innerText
+                    item.innerText = "- " + item.innerText
                 }
 
                 var itemSpan = document.createElement("span");
