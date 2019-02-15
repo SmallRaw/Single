@@ -74,10 +74,6 @@ var Single_Theme = function (config) {
                 if(category.count == 0){
                     continue;
                 }
-                //<a href="<?php echo $child['permalink'] ?>" title="<?php echo $child['name']; ?>">
-                //○ <?php echo $child['name']; ?>
-                //<span class="badge" style="float:right;"><?php echo $child['count']; ?></span>
-                //</a>
                 
                 var item = document.createElement("a");
                 item.innerText = category.name;
