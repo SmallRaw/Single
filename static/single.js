@@ -2,22 +2,25 @@
 
 # Single Theme
 # By: Dreamer-Paul
-# Last Update: 2019.3.2
+# Last Update: 2018.9.28
 
 一个简洁大气，含夜间模式的 Typecho 博客模板。
 
+欢迎你加入缤奇，和我们一起改变世界。
 本代码为奇趣保罗原创，并遵守 MIT 开源协议。欢迎访问我的博客：https://paugram.com
 
 ---- */
 
-var Paul_Single = function (config) {
+var Single_Theme = function (config) {
     var that = this;
     var body = document.body;
+    var page = ks.select(".home-title");
     var content = ks.select(".post-content") || ks.select(".page-content");
 
     // 菜单按钮
     this.header = function () {
-        var menu = document.getElementsByClassName("head-menu")[0];
+        var toggle = ks.select(".toggle-btn");
+        var menu = ks.select(".head-menu");
 
         ks.select(".toggle-btn").onclick = function () {
             menu.classList.toggle("active");
@@ -25,8 +28,8 @@ var Paul_Single = function (config) {
 
         ks.select(".light-btn").onclick = this.night;
 
-        var search = document.getElementsByClassName("search-btn")[0];
-        var bar = document.getElementsByClassName("head-search")[0];
+        var search = ks.select(".search-btn");
+        var bar = ks.select(".head-search");
 
         search.addEventListener("click", function () {
             bar.classList.toggle("active");
@@ -44,6 +47,53 @@ var Paul_Single = function (config) {
             document.cookie = "night=true;" + "path=/;" + "max-age=21600";
         }
     };
+
+    //分类栏
+    this.category = function () {
+        var wrap = ks.select(".wrap");
+        var categoryList = config.categorys.stack;
+        if (categoryList.length > 0) {
+            body.classList.add("has-trees");
+            var trees = ks.create("aside");
+            trees.className = "article-list";
+            trees.innerHTML += "<h3>分类目录：</h3>";
+
+            for (var i = 0; i < categoryList.length; i++) {
+                var category = categoryList[i];
+
+                var item = ks.create("a", { title: category.name, text: category.name, href: category.permalink});
+                item.setAttribute("slug", category.slug);
+
+                if (category.directory.length > 1) {
+                    item.classList.add("subCategory")
+                    item.innerText = "- " + item.innerText
+                }
+
+                var itemSpan = ks.create("span");
+                itemSpan.classList.add("badge");
+                itemSpan.classList.add("categoryCount");
+                itemSpan.innerText = category.count + " 篇";
+
+                item.appendChild(itemSpan);
+
+                trees.appendChild(item);
+            }
+
+            wrap.appendChild(trees);
+
+            function toggle_tree() {
+                var buttons = ks.select("footer .buttons");
+                var btn = ks.create("a", {class: "toggle-list"});
+                buttons.appendChild(btn);
+
+                btn.addEventListener("click", function () {
+                    trees.classList.toggle("active");
+                })
+            }
+            toggle_tree();
+        }
+
+    }
 
     // 目录树
     this.tree = function () {
@@ -131,23 +181,29 @@ var Paul_Single = function (config) {
         this.comment_list();
     }
 
+    if (page) {
+        this.category();
+    }
+
     // 返回页首
     window.addEventListener("scroll", this.to_top);
 
     // 如果开启自动夜间模式
-    if(config.toggleNight){
+    if (config.toggleNight) {
         var hour = new Date().getHours();
 
-        if(document.cookie.search(/night/) === -1 && (hour <= 5 || hour >= 22)){
-            document.body.classList.add("neon");
-            document.cookie = "night=true;" + "path=/;" + "max-age=21600";
+        if (document.cookie.search(/night/) == -1 && (hour <= 5 || hour >= 22)) {
+            this.night_add();
         }
     }
 
     // 如果开启复制内容提示
-    if(config.copyNotice){
+    if (config.copyNotice) {
         document.oncopy = function () {
-            ks.notice("复制内容请注明来源并保留版权信息！", {color: "yellow", overlay: true})
+            ks.notice("复制内容请注明来源并保留版权信息！", {
+                color: "yellow",
+                overlay: true
+            })
         };
     }
 };
@@ -157,5 +213,5 @@ ks.image(".post-content img, .page-content img");
 
 // 请保留版权说明
 if (window.console && window.console.log) {
-    console.log("%c Single %c https://paugram.com ","color: #fff; margin: 1em 0; padding: 5px 0; background: #ffa628;","margin: 1em 0; padding: 5px 0; background: #efefef;");
+    console.log("%c Single %c https://paugram.com ", "color: #fff; margin: 1em 0; padding: 5px 0; background: #ffa628;", "margin: 1em 0; padding: 5px 0; background: #efefef;");
 }
