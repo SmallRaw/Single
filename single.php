@@ -46,7 +46,9 @@ class Single {
     // 夜间模式
     static function is_night() {
         if(isset($_COOKIE["night"])){
-            echo $_COOKIE["night"] == "true" ?? ' class="neon"';
+            // ?? 运算符 PHP7+ 才开始支持
+            // echo $_COOKIE["night"] == "true" ?? ' class="neon"';
+            if($_COOKIE["night"] == "true") echo ' class="neon"';
         }
     }
 
