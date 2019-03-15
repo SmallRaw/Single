@@ -64,6 +64,7 @@ em{ background: #6f9fc7 }
 }
 
 pre code{
+    color: inherit;
     background-size: auto 3em;
     background-origin: content-box;
 }
