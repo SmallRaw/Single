@@ -63,14 +63,6 @@ em{ background: #6f9fc7 }
     background: #9fcff7;
 }
 
-pre code{
-    color: inherit;
-    border: 1px solid #ddd;
-    background: linear-gradient(rgba(18, 18, 18, .05) 50%, transparent 0);
-    background-size: auto 3em;
-    background-origin: content-box;
-}
-
 blockquote{
     background: #ecf1f5;
     border-color: #6f9fc7;

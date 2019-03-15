@@ -42,7 +42,6 @@
 <?php if(time() - $this -> modified >= 15552000): ?>
             <blockquote>这篇文章上次修改于 <?php echo ceil((time() - $this -> modified) / 86400) ?> 天前，可能其部分内容已经发生变化，如有疑问可询问作者。</blockquote>
 <?php endif ?> 
-            <?php $this -> content(); ?>
         </article>
         <section class="post-near">
             <ul>

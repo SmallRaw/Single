@@ -236,35 +236,6 @@ article h4, article h5, article h6{ font-size: 1.1em }
 .btn.green{ background: #27a17e }
 .btn.transparent{ background: transparent }
 
-/* - 代码 */
-pre, code{
-    font-size: 1em;
-    font-family: 'Consolas', 'Courier New', monospace, "微软雅黑";
-}
-
-pre{ word-wrap: normal }
-
-code{
-    color: #c40b00;
-    font-size: 90%;
-    word-wrap: normal;
-    border-radius: 4px;
-    padding: .25em .5em;
-    word-break: break-all;
-    background-color: #f7f2f4;
-}
-
-pre > code{
-    color: #fff;
-    padding: 1em;
-    display: block;
-    overflow-x: auto;
-    word-break: normal;
-    font-size: inherit;
-    border-radius: 5px;
-    background-color: #333;
-}
-
 /* - 项目列表 */
 ul, ol{ margin-left: 1.25em }
 ul.clear, ol.clear{

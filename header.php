@@ -22,6 +22,7 @@
     <link href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single@<?php echo Single::$version; ?>/static/single.css" rel="stylesheet" type="text/css"/>
 <?php endif; ?>
     <link href="<?php $this->options->themeUrl('static/custom.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php $this->options->themeUrl('static/prism.css'); ?>" rel="stylesheet" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
 <?php if($this -> options -> background): ?>
