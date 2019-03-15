@@ -63,6 +63,11 @@ em{ background: #6f9fc7 }
     background: #9fcff7;
 }
 
+pre code{
+    background-size: auto 3em;
+    background-origin: content-box;
+}
+
 blockquote{
     background: #ecf1f5;
     border-color: #6f9fc7;

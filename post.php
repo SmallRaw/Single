@@ -25,8 +25,8 @@
             <?php $this->content(); ?>
 
             <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
-                <button class="btn small" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-                    <span>打赏</span>
+                <button class="btn" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                    <span>投喂博主</span>
                 </button>
                 <div id="QR" style="display: none;">
                     <div id="wechat" style="display: inline-block">
