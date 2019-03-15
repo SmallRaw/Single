@@ -1,4 +1,4 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if(!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <footer>
     <div class="buttons">
@@ -39,16 +39,19 @@
 </footer>
 
 <?php if($this -> options -> cdn_set == '0'): ?>
-<script src="<?php $this->options->themeUrl('js/kico.js'); ?>"></script>
-<script src="<?php $this->options->themeUrl('js/single.js'); ?>"></script>
+<script src="<?php $this -> options -> themeUrl('static/kico.js'); ?>"></script>
+<script src="<?php $this -> options -> themeUrl('static/single.js'); ?>"></script>
+<script src="<?php $this -> options -> themeUrl('static/prism.js'); ?>"></script>
 <?php else: ?>
-<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single/js/kico.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single/js/single.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single@<?php echo Single::$version; ?>/static/kico.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single@<?php echo Single::$version; ?>/static/single.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Single@<?php echo Single::$version; ?>/static/prism.js"></script>
 <?php endif; ?>
 <script>var single = new Single_Theme({copyNotice: <?php if ($this->options->copy_notice == 1): ?>true<?php else: ?>false<?php endif; ?>, toggleNight: <?php if ($this->options->night_mode == 1): ?>true<?php else: ?>false<?php endif; ?>, categorys:eval(<?php $this->widget('Widget_Metas_Category_List')->to($categorys); echo json_encode($categorys);?>) });</script>
 <?php $this -> options -> custom_script() ?>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.min.js"></script>
-<script>var scroll = new SmoothScroll('.to-top, .article-list a', {offset: 100});</script>
+<script>var scroll = new SmoothScroll('.to-top, .article-list a, .comment-content a', {offset: 100, easing: "easeOutQuint", updateURL: false, popstate: false});</script>
+
 <?php $this -> footer(); ?>
 
 </body>
