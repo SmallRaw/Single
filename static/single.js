@@ -193,7 +193,8 @@ var Single_Theme = function (config) {
         var hour = new Date().getHours();
 
         if (document.cookie.search(/night/) == -1 && (hour <= 5 || hour >= 22)) {
-            this.night_add();
+            document.body.classList.add("neon");
+            document.cookie = "night=true;" + "path=/;" + "max-age=21600";
         }
     }
 
