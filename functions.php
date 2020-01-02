@@ -31,6 +31,14 @@ function themeConfig($form) {
     $author_text = new Typecho_Widget_Helper_Form_Element_Textarea('author_text', NULL, NULL, _t('作者信息'), _t('显示在文章底部的作者信息，不填则不输出。'));
     $form -> addInput($author_text);
 
+    // 网站备案号
+    $filing_domain_text = new Typecho_Widget_Helper_Form_Element_Text('filing_domain_text', NULL, NULL, _t('备案信息'), _t('显示备案信息在网页底部，不填则不输出。'));
+    $form -> addInput($filing_domain_text);
+
+    // 网站备案地方网站
+    $filing_domain_url = new Typecho_Widget_Helper_Form_Element_Text('filing_domain_url', NULL, NULL, _t('工信部链接'), _t('点击备案信息将跳转到工信部网站，不填将打开一个新的当前页面。'));
+    $form -> addInput($filing_domain_url);
+
     // 夜间模式
     $night_mode = new Typecho_Widget_Helper_Form_Element_Radio('night_mode',
         array(
@@ -78,4 +86,13 @@ function themeConfig($form) {
         ),
         array('show_category', 'show_comments'), _t('文章页属性显示'));
     $form -> addInput($post_meta -> multiMode());
+
+    // 首页分类栏
+    $widget_home_category = new Typecho_Widget_Helper_Form_Element_Radio('widget_home_category',
+        array(
+          '0' => _t('关闭'),
+          '1' => _t('开启'),
+        ),
+        '0', _t('是否在网站首页右边显示侧边分类导航栏'), _t('在首页右侧显示分类导航栏'));
+    $form -> addInput($widget_home_category);
 }
