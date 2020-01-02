@@ -34,6 +34,7 @@
 <?php endif; ?>
         <section class="sub-footer">
             <p>© <?php echo date('Y'); ?> <a href="<?php $this -> options -> siteUrl() ?>"><?php $this -> options -> title() ?></a>. All Rights Reserved. Theme By <a href="https://github.com/smallraw/Single" target="_blank" rel="nofollow">Single</a>.</p>
+            <p><a href="http://beian.miit.gov.cn">京ICP备17019993号-2</a></p>
         </section>
     </div>
 </footer>

@@ -13,6 +13,7 @@
 
 var Paul_Single = function (config) {
     var body = document.body;
+    var page = ks.select(".home-title");
     var content = ks.select(".post-content:not(.is-special), .page-content:not(.is-special)");
 
     // 菜单按钮

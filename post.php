@@ -22,7 +22,11 @@
             </div>
         </section>
         <article class="post-content">
-            <?php $this->content(); ?>
+
+<?php if(time() - $this -> modified >= 15552000): ?>
+            <blockquote>这篇文章上次修改于 <?php echo ceil((time() - $this -> modified) / 86400) ?> 天前，可能其部分内容已经发生变化，如有疑问可询问作者。</blockquote>
+<?php endif ?>
+            <?php $this -> content(); ?>
 
             <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
                 <button class="btn" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
@@ -39,10 +43,6 @@
                     </div>
                 </div>
             </div>
-<?php if(time() - $this -> modified >= 15552000): ?>
-            <blockquote>这篇文章上次修改于 <?php echo ceil((time() - $this -> modified) / 86400) ?> 天前，可能其部分内容已经发生变化，如有疑问可询问作者。</blockquote>
-<?php endif ?>
-            <?php $this -> content(); ?>
         </article>
         <section class="post-near">
             <ul>
