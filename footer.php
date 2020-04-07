@@ -33,17 +33,24 @@
         </section>
 <?php endif; ?>
         <section class="sub-footer">
-            <p>© <?php echo date('Y'); ?> <a href="<?php $this -> options -> siteUrl(); ?>"><?php $this -> options -> title(); ?></a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Single" target="_blank" rel="nofollow">Single</a>.</p>
+            <p>© <?php echo date('Y'); ?> <a href="<?php $this -> options -> siteUrl() ?>"><?php $this -> options -> title() ?></a>. All Rights Reserved. Theme By <a href="https://github.com/smallraw/Single" target="_blank" rel="nofollow">Single</a>.</p>
+            <p><a href="<?php $this -> options -> filing_domain_url(); ?>" target="view_window"><?php $this -> options -> filing_domain_text(); ?></a></p>
         </section>
     </div>
 </footer>
 
 <script src="<?php $this -> options -> themeUrl('static/kico.js'); ?>"></script>
 <script src="<?php $this -> options -> themeUrl('static/single.js'); ?>"></script>
-<script src="<?php $this -> options -> themeUrl('static/prism.js'); ?>"></script>
-<script>var single = new Paul_Single({copyright: <?php if($this -> options -> copy_notice == 1): ?>true<?php else: ?>false<?php endif; ?>, night: <?php if($this -> options -> night_mode == 1): ?>true<?php else: ?>false<?php endif; ?>});</script>
+<script async="async" src="<?php $this -> options -> themeUrl('static/prism.js'); ?>"></script>
+<script>var single = new Paul_Single({copyright: <?php if($this -> options -> copy_notice == 1): ?>true<?php else: ?>false<?php endif; ?>, night: <?php if($this -> options -> night_mode == 1): ?>true<?php else: ?>false<?php endif; ?> });</script>
 <?php $this -> options -> custom_script(); ?>
 <?php $this -> footer(); ?>
-
+<script async="async">
+    if(true == <?php if($this -> options -> widget_home_category == 1): ?>true<?php else: ?>false<?php endif; ?>){
+        var categorys = new Categorys({
+            categorys:eval(<?php $this->widget('Widget_Metas_Category_List')->to($categorys); echo json_encode($categorys);?>)
+        })
+    }
+</script>
 </body>
 </html>

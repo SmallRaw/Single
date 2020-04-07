@@ -22,10 +22,27 @@
             </div>
         </section>
         <article class="post-content">
+
 <?php if(time() - $this -> modified >= 15552000): ?>
             <blockquote>这篇文章上次修改于 <?php echo ceil((time() - $this -> modified) / 86400) ?> 天前，可能其部分内容已经发生变化，如有疑问可询问作者。</blockquote>
 <?php endif ?>
             <?php $this -> content(); ?>
+
+            <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
+                <button class="btn" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                    <span>投喂博主</span>
+                </button>
+                <div id="QR" style="display: none;">
+                    <div id="wechat" style="display: inline-block">
+                        <a class="fancybox" rel="group"><img id="wechat_qr" src="http://blog.smallraw.com/wx.png" alt="WeChat Pay"></a>
+                        <p>微信打赏</p>
+                    </div>
+                    <div id="alipay" style="display: inline-block">
+                        <a class="fancybox" rel="group"><img id="alipay_qr" src="http://blog.smallraw.com/zfb.png" alt="Alipay"></a>
+                        <p>支付宝打赏</p>
+                    </div>
+                </div>
+            </div>
         </article>
         <section class="post-near">
             <ul>

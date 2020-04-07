@@ -29,6 +29,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section{ 
 
 html{
     color: #353535;
+     /* font: 16px/1.5 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', sans-serif; */
+     /* font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; */
+     /* font: 1em/1.6 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; */
     scroll-behavior: smooth;
     font: 16px/1.5 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
 }
@@ -227,8 +230,15 @@ button{
 }
 .btn.transparent{ background: transparent }
 
+pre, code{
+    font-size: .94em;
+    font-family: 'Consolas', 'Courier New', monospace, "微软雅黑";
+}
+
+pre{ word-wrap: normal }
+
 /* - 代码 */
-pre, code{ font-family: 'Consolas', 'Courier New', monospace, "微软雅黑" }
+/* pre, code{ font-family: 'Consolas', 'Courier New', monospace, "微软雅黑" } */
 
 :not(pre) > code{
     color: #c40b00;
@@ -249,7 +259,7 @@ pre > code{
     word-break: normal;
     font-size: inherit;
     border-radius: 5px;
-    background-color: #333;
+    background-color: #2d2d2d;
 }
 
 /* - 项目列表 */
@@ -624,6 +634,10 @@ table > tbody > tr:hover{
 
 table > thead > tr > th, table > tbody > tr > th, table > tfoot > tr > th,
 table > thead > tr > td, table > tbody > tr > td, table > tfoot > tr > td{
+    white-space: pre-wrap;
+}
+
+table td:nth-child(1) {
     white-space: nowrap;
 }
 

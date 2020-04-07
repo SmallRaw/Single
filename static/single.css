@@ -72,8 +72,6 @@ em{ background: #6f9fc7 }
 
 pre code{
     color: inherit;
-    border: 1px solid #ddd;
-    background: linear-gradient(rgba(18, 18, 18, .05) 50%, transparent 0);
     background-size: auto 3em;
     background-origin: content-box;
 }
@@ -526,6 +524,7 @@ article h1:before{ font-weight: bold }
 
 /* - 阅读页作者信息 */
 .post-author{
+    width: 100%;
     display: table;
     padding: 1.5em 0;
     border-top: 1px solid #ddd;

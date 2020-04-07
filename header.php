@@ -16,6 +16,8 @@
 <?php endif; ?>
     <link href="<?php $this -> options -> themeUrl('static/kico.css'); ?>" rel="stylesheet" type="text/css"/>
     <link href="<?php $this -> options -> themeUrl('static/single.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php $this->options->themeUrl('static/custom.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php $this->options->themeUrl('static/prism.css'); ?>" rel="stylesheet" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
 <?php if($this -> options -> background): ?>
@@ -33,7 +35,7 @@
         ), ""); ?>"/>
 <?php $this -> header('generator=&template=&pingback=&xmlrpc=&wlw='); ?>
 </head>
-<body<?php Single::is_night() ?>>
+<body <?php Single::is_night() ?>>
 <header>
     <div class="head-title">
         <h4><?php $this -> options -> title(); ?></h4>
@@ -48,12 +50,12 @@
     </form>
     <nav class="head-menu">
         <a href="<?php $this -> options -> siteUrl(); ?>">首页</a>
-        <div class="has-child">
+        <!-- <div class="has-child">
             <a>分类</a>
             <div class="sub-menu">
                 <?php $this -> widget('Widget_Metas_Category_List') -> parse('<a href="{permalink}">{name}</a>'); ?>
             </div>
-        </div>
+        </div> -->
         <?php $this -> widget('Widget_Contents_Page_List') -> parse('<a href="{permalink}">{title}</a>'); ?>
 <?php if($this -> user -> hasLogin()): ?>
         <a href="<?php $this -> options -> adminUrl(); ?>" target="_blank">进入后台</a>

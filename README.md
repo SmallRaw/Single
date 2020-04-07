@@ -11,8 +11,11 @@
 
 ## 主题故事
 
+本项目基于保罗的 Single 项目微调，并进行了一定的定制化。
+### 详见保罗的博文：
 - 开发历程：[Single 主题与单身狗](https://paugram.com/essay/single-theme-and-single-dog.html)
 - 帮助文档 & 常见问题：[传送门](https://docs.paul.ren/single)
+
 
 ## 主题亮点
 
@@ -24,7 +27,7 @@
 
 原创不易！如果喜欢本项目，请 `Star` 它以示对我的支持~
 
-同时欢迎前往 [我的博客](https://paugram.com/about.html#donate) 为我提供赞助，谢谢您！
+同时欢迎前往 [保罗的博客](https://paugram.com/about.html#donate) 为保罗提供赞助，谢谢！
 
 ## 感谢
 
