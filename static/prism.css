@@ -1,5 +1,5 @@
-/* PrismJS 1.15.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+c+cpp+dart+markup-templating+docker+git+go+groovy+http+java+php+javadoclike+json+kotlin+lua+nginx+jsdoc+sql+python+javadoc+vim+wiki&plugins=line-numbers+autolinker+toolbar+remove-initial-line-feed+autoloader+show-language+copy-to-clipboard */
+/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+c+cpp+dart+docker+git+go+groovy+http+java+javadoc+javadoclike+jsdoc+json+kotlin+lua+markup-templating+nginx+php+python+sql+vim+wiki&plugins=line-numbers+autolinker+show-language+remove-initial-line-feed+autoloader+toolbar+copy-to-clipboard */
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
@@ -11,13 +11,14 @@ pre[class*="language-"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: .94em;
+	/* font-size: 1em; */
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
+	border-radius: 5px;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -27,13 +28,14 @@ pre[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	margin: 5px 0;
+	/* padding: 1em; */
+	margin: .5em 0;
 	overflow: auto;
-	border-radius: 5px;
 }
 
 :not(pre) > code[class*="language-"],
@@ -180,6 +182,12 @@ div.code-toolbar > .toolbar {
 }
 
 div.code-toolbar:hover > .toolbar {
+	opacity: 1;
+}
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+   IE11 and old Edge versions don't support :focus-within. */
+div.code-toolbar:focus-within > .toolbar {
 	opacity: 1;
 }
 

@@ -71,7 +71,9 @@ em{ background: #6f9fc7 }
 }
 
 pre code{
-    color: inherit;
+    /* color: inherit; */
+    color: #ccc;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     background-size: auto 3em;
     background-origin: content-box;
 }
