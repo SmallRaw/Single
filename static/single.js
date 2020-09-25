@@ -183,7 +183,6 @@ var Categorys = function (config) {
         var wrap = ks.select(".wrap");
         var categoryList = config.categorys.stack;
         if (categoryList.length > 0) {
-            body.classList.add("has-trees");
             var trees = ks.create("aside");
             trees.className = "article-list";
             trees.innerHTML += "<h3>分类目录：</h3>";
