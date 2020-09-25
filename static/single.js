@@ -2,7 +2,7 @@
 
 # Single Theme
 # By: Dreamer-Paul
-# Last Update: 2019.11.17
+# Last Update: 2020.9.11
 
 一个简洁大气，含夜间模式的 Typecho 博客模板。
 
@@ -36,12 +36,12 @@ var Paul_Single = function (config) {
 
     // 关灯切换
     this.night = function () {
-        if(body.classList.contains("neon")){
-            body.classList.remove("neon");
+        if(body.classList.contains("dark-theme")){
+            body.classList.remove("dark-theme");
             document.cookie = "night=false;" + "path=/;" + "max-age=21600";
         }
         else{
-            body.classList.add("neon");
+            body.classList.add("dark-theme");
             document.cookie = "night=true;" + "path=/;" + "max-age=21600";
         }
     };
@@ -90,8 +90,6 @@ var Paul_Single = function (config) {
                 })
             }
             toggle_tree();
-
-            ks.scrollTo(".article-list a", 100);
         }
     };
 
@@ -107,7 +105,7 @@ var Paul_Single = function (config) {
     };
 
     this.comment_list = function () {
-        ks(".comment-content a").each(function (t) {
+        ks(".comment-content [href^='#comment']").each(function (t) {
             var item = ks.select(t.getAttribute("href"));
 
             t.onmouseover = function () {
@@ -144,8 +142,16 @@ var Paul_Single = function (config) {
         var hour = new Date().getHours();
 
         if(document.cookie.indexOf("night") === -1 && (hour <= 5 || hour >= 22)){
-            document.body.classList.add("neon");
+            document.body.classList.add("dark-theme");
             document.cookie = "night=true;" + "path=/;" + "max-age=21600";
+        }
+    }
+    else if(document.cookie.indexOf("night") !== -1){
+        if(document.cookie.indexOf("night=true") !== -1){
+            document.body.classList.add("dark-theme");
+        }
+        else{
+            document.body.classList.remove("dark-theme");
         }
     }
 
@@ -162,9 +168,6 @@ var Paul_Single = function (config) {
 
 // 图片缩放
 ks.image(".post-content:not(.is-special) img, .page-content:not(.is-special) img");
-
-// 平滑滚动
-ks.scrollTo(".to-top");
 
 // 请保留版权说明
 if (window.console && window.console.log) {

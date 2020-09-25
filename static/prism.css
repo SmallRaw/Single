@@ -1,5 +1,5 @@
-/* PrismJS 1.20.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+c+cpp+dart+docker+git+go+groovy+http+java+javadoc+javadoclike+jsdoc+json+kotlin+lua+markup-templating+nginx+php+python+sql+vim+wiki&plugins=line-numbers+autolinker+show-language+remove-initial-line-feed+autoloader+toolbar+copy-to-clipboard */
+/* PrismJS 1.21.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+c+cpp+dart+docker+git+go+groovy+http+java+javadoc+javadoclike+jsdoc+json+kotlin+lua+markup-templating+nginx+php+python+sql+typescript+vim+wiki&plugins=line-numbers+autolinker+show-language+remove-initial-line-feed+autoloader+toolbar+copy-to-clipboard */
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
@@ -11,14 +11,13 @@ pre[class*="language-"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	/* font-size: 1em; */
+	font-size: 1em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
-	border-radius: 5px;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -33,7 +32,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	/* padding: 1em; */
+	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
 }
@@ -153,7 +152,6 @@ pre[class*="language-"].line-numbers > code {
 }
 
 	.line-numbers-rows > span {
-		pointer-events: none;
 		display: block;
 		counter-increment: linenumber;
 	}
