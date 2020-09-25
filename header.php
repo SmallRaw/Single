@@ -35,7 +35,7 @@
         ), ""); ?>"/>
 <?php $this -> header('generator=&template=&pingback=&xmlrpc=&wlw='); ?>
 </head>
-<body <?php Single::is_night() ?>>
+<body <?php Single::is_night($this -> options -> widget_home_category == 1) ?>>
 <header>
     <div class="head-title">
         <h4><?php $this -> options -> title(); ?></h4>

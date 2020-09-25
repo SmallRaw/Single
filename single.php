@@ -44,12 +44,20 @@ class Single {
     }
 
     // 夜间模式
-    static function is_night() {
+    static function is_night($hastrees) {
         if(isset($_COOKIE["night"])){
-            echo $_COOKIE["night"] == "true" ? ' class="dark-theme"' : '';
+            if($hastrees){
+                echo $_COOKIE["night"] == "true" ? ' class="dark-theme has-trees"' : '';
+            }else{
+                echo $_COOKIE["night"] == "true" ? ' class="dark-theme"' : '';
+            }
         }
         else if(Typecho_Widget::widget('Widget_Options') -> night_mode == 2){
-            echo ' class="dark-theme"';
+            if($hastrees){
+                echo ' class="dark-theme has-trees"';
+            }else{
+                echo ' class="dark-theme"';
+            }
         }
     }
 
