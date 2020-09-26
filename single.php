@@ -47,7 +47,7 @@ class Single {
     static function is_night($hastrees) {
         if(isset($_COOKIE["night"])){
             if($hastrees){
-                echo $_COOKIE["night"] == "true" ? ' class="dark-theme has-trees"' : ''class="has-trees"';
+                echo $_COOKIE["night"] == "true" ? ' class="dark-theme has-trees"' : 'class="has-trees"';
             }else{
                 echo $_COOKIE["night"] == "true" ? ' class="dark-theme"' : '';
             }
