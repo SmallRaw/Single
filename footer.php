@@ -4,7 +4,11 @@
     <div class="buttons">
         <a class="to-top" href="#"></a>
     </div>
-    <div class="wrap min">
+    <?php if($this -> options -> widget_home_category == '1'): ?>	
+        <div class="wrap min">	    <div class="wrap min">
+    <?php else: ?>	
+        <div class="wrap has-trees min">	
+    <?php endif; ?>
 <?php if($this -> options -> widget_set == '1'): ?>
         <section class="widget">
             <div class="row">
