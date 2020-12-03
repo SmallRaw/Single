@@ -35,11 +35,7 @@
         ), ""); ?>"/>
 <?php $this -> header('generator=&template=&pingback=&xmlrpc=&wlw='); ?>
 </head>
-<?php if($this -> options -> widget_home_category == '1'): ?>	
-    <body class="has-trees" <?php Single::is_night() ?>>
-<?php else: ?>	
-    <body <?php Single::is_night() ?>>
-<?php endif; ?>
+<body <?php Single::is_night($this -> options -> widget_home_category == 1) ?>>
 <header>
     <div class="head-title">
         <h4><?php $this -> options -> title(); ?></h4>
